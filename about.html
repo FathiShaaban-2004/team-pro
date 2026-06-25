@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عن منصة عطاء</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- ══════ loading ══════ -->
+<div id="loader">
+    <div>
+      <img src="images/logo.png" alt="logo">
+    </div>
+</div>
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png"
+        alt="logo"
+        class="logo-img">
+    </a>
+
+    <!-- Links -->
+    <div class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="charity.html">الجمعيات</a>
+      <a href="ai-chat.html" class="active">
+        المساعد الذكي
+      </a>
+      <a href="about.html">
+        عن المنصة
+      </a>
+      <a href="contact.html">
+        تواصل معنا
+      </a>
+    
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions" id="navActions">
+
+      <!-- لو مش عامل Login -->
+      <div id="guestButtons">
+
+        <a class="nav-btn-login"
+          href="login-register.html?mode=login">
+          دخول
+        </a>
+
+        <a class="nav-btn-signup"
+          href="login-register.html?mode=register">
+          حساب جديد
+        </a>
+
+      </div>
+
+      <!-- لو عامل Login -->
+      <div id="userButtons"
+        style="display:none; align-items:center; gap:10px;">
+
+        <a href="settings.html"
+          class="settings-btn"
+          title="الإعدادات">
+
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <button id="logoutBtn"
+          class="nav-btn-login">
+          تسجيل خروج
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Hamburger -->
+    <button class="nav-ham"
+      id="hamBtn">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav"
+  id="mobileNav">
+
+  <a href="index.html">
+    الرئيسية
+  </a>
+
+  <a href="charity.html">
+    الجمعيات
+  </a>
+
+  <a href="ai-chat.html">
+    المساعد الذكي
+  </a>
+
+  <a href="about.html">
+    عن المنصة
+  </a>
+
+  <a href="contact.html">
+    تواصل معنا
+  </a>
+
+  <!-- Guest -->
+  <div id="mobileGuestButtons">
+
+    <a class="nav-btn-login"
+      href="login-register.html?mode=login">
+      دخول
+    </a>
+
+    <a class="nav-btn-signup"
+      href="login-register.html?mode=register">
+      حساب جديد
+    </a>
+
+  </div>
+
+  <!-- Logged In -->
+  <div id="mobileUserButtons"
+    style="display:none;">
+
+    <a href="settings.html"
+      class="nav-btn-login">
+      ⚙️ الإعدادات
+    </a>
+
+    <button id="mobileLogoutBtn"
+      class="nav-btn-signup"
+      style="width:100%; margin-top:10px;">
+
+      تسجيل خروج
+    </button>
+
+  </div>
+
+</div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="breadcrumb">
+    <a href="index.html">الرئيسية</a>
+    <span>/</span>
+    <span style="color:rgba(255,255,255,.8)">عن المنصة</span>
+  </div>
+  <h1>عن منصة <span style="color:var(--gold-300)">عطاء</span></h1>
+  <p>منصة عطاء هي مبادرة تهدف إلى إعادة توزيع الملابس المستعملة بطريقة كريمة ومنظمة، لضمان وصولها إلى الفئات الأكثر احتياجًا. نحن نؤمن أن كل قطعة ملابس يمكن أن تمنح حياة جديدة لشخص آخر.</p>
+</section>
+
+<!-- GOALS -->
+<section class="goals-sec">
+  <div class="container">
+    <div class="goals-grid">
+      <div class="reveal">
+        <span class="sec-label">🎯 أهدافنا</span>
+        <h2 class="sec-title">لماذا <span>عطاء؟</span></h2>
+        <p class="sec-sub">نحن جسر الخير الذي يربط بين فائض احتياجاتك وبين عائلات وأفراد في أمس الحاجة إليها.</p>
+
+        <div class="goals-list">
+          <div class="goal-item">
+            <div class="goal-icon">🔗</div>
+            <p>تنظيم وتنسيق الجهود بين المتبرعين والجمعيات الخيرية بطريقة إلكترونية فعّالة.</p>
+          </div>
+          <div class="goal-item">
+            <div class="goal-icon">🛡️</div>
+            <p>تسهيل عملية التبرع من خلال نظام إلكتروني بسيط وآمن يحفظ بيانات المستخدمين.</p>
+          </div>
+          <div class="goal-item">
+            <div class="goal-icon">💚</div>
+            <p>حفظ كرامة المحتاج عبر آلية توزيع تحفظ الخصوصية وتضمن الوصول للمستحقين.</p>
+          </div>
+          <div class="goal-item">
+            <div class="goal-icon">♻️</div>
+            <p>تقليل الهدر البيئي عبر إعادة استخدام الملابس الصالحة وإطالة عمرها الافتراضي.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="goals-img reveal">
+        <img src="images/images4project.jpg" alt="أهداف المنصة">
+        <div class="goals-img-badge">
+          <strong>2018</strong>
+          <span>سنة التأسيس</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-sec">
+  <div class="gallery-header reveal">
+    <span class="sec-label">👕 أنواع التبرعات</span>
+    <h2 class="sec-title">أنواع الملابس التي يمكن <span>التبرع بها</span></h2>
+    <p class="sec-sub" style="margin:0 auto">نقبل جميع أنواع الملابس بشرط أن تكون في حالة جيدة وصالحة للاستخدام.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item reveal"><img src="images/man.jpeg" alt="رجالي"><div class="gallery-overlay"><p>👔 ملابس رجالي</p></div></div>
+    <div class="gallery-item reveal" style="transition-delay:.1s"><img src="images/woman.jpeg" alt="نسائي"><div class="gallery-overlay"><p>👗 ملابس نسائي</p></div></div>
+    <div class="gallery-item reveal" style="transition-delay:.2s"><img src="images/children.jpeg" alt="أطفال"><div class="gallery-overlay"><p>🧒 ملابس أطفال</p></div></div>
+    <div class="gallery-item reveal" style="transition-delay:.1s"><img src="images/img1.jpeg" alt="جاكيتات"><div class="gallery-overlay"><p>🧥 جاكيتات ومعاطف</p></div></div>
+    <div class="gallery-item reveal" style="transition-delay:.2s"><img src="images/summer.jpeg" alt="صيفية"><div class="gallery-overlay"><p>☀️ ملابس صيفية</p></div></div>
+    <div class="gallery-item reveal" style="transition-delay:.3s"><img src="images/winter.jpeg" alt="شتوية"><div class="gallery-overlay"><p>❄️ ملابس شتوية</p></div></div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-sec">
+  <div class="values-header reveal">
+    <span class="sec-label">💡 كيف نعمل</span>
+    <h2 class="sec-title">منصة <span>شفافة وموثوقة</span></h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-icon">🤲</div>
+      <div>
+        <h3>نحن جسر الخير</h3>
+        <p>منصة عطاء هي منصة إلكترونية تهدف إلى تسهيل التبرع بالملابس بطريقة منظمة وآمنة لضمان وصول الملابس للمحتاجين.</p>
+      </div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:.12s">
+      <div class="value-icon">🎯</div>
+      <div>
+        <h3>رؤيتنا</h3>
+        <p>أن يكون لكل أسرة احتياجها من الملابس بسهولة وكرامة، وأن تصبح منصة عطاء وسيلة لنشر الخير والتكافل.</p>
+      </div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:.24s">
+      <div class="value-icon">📦</div>
+      <div>
+        <h3>كيف يتم التبرع؟</h3>
+        <p>قم بتجهيز الملابس التي لا تحتاجها وتأكد من نظافتها، سجّل طلب التبرع وسيتم توصيلها للجمعيات الخيرية.</p>
+      </div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:.36s">
+      <div class="value-icon">👥</div>
+      <div>
+        <h3>من يستفيد؟</h3>
+        <p>يمكن التبرع بملابس (رجالي – نسائي – أطفال) بشرط أن تكون صالحة للاستخدام لأكبر عدد من الأسر المحتاجة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-body">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="nav-logo-mark">ع</div>
+        <span class="nav-logo-text" style="color:var(--white)">عطاء</span>
+      </div>
+      <p>منصة عطاء تهدف إلى تنظيم التبرع بالملابس المستعملة وربط المتبرعين بالجمعيات الخيرية.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>الصفحات</h4>
+      <a href="index.html">الرئيسية</a>
+      <a href="charity.html">الجمعيات</a>
+      <a href="about.html">عن المنصة</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>الجمعيات</h4>
+      <a href="ksaa.html">بنك الكساء المصري</a>
+      <a href="rsala.html">جمعية رسالة</a>
+      <a href="aleslah.html">مؤسسة الإصلاح</a>
+    </div>
+    <div class="footer-col">
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="fqe.html">سياسة الخصوصية</a>
+      <a href="privacy.html">الشروط والأحكام</a>
+      <a href="terms.html">الأسئلة الشائعة</a>
+    </div>
+  </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 عطاء – جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+</body>
+<script src="script/main.js"></script>
+</html>

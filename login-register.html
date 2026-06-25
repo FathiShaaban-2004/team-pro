@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عطاء - تسجيل الدخول وإنشاء الحساب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- ✅ النماذج أولاً -->
+        <div class="forms-container">
+
+            <!-- ─── نموذج تسجيل الدخول ─── -->
+            <div class="form-wrapper login-form">
+                <form id="loginForm">
+                    <h2 class="sec-title">تسجيل الدخول</h2>
+                    <p class="sec-sub">مرحباً بعودتك! سجل دخولك للمتابعة</p>
+
+                    <div class="input-group">
+                        <input type="email" id="login-email" placeholder="البريد الإلكتروني" required autocomplete="email">
+                        <i class="fa-solid fa-envelope field-icon"></i>
+                        <i class="fa-solid fa-circle-check status-icon"></i>
+                    </div>
+                    <div class="field-hint" id="hint-login-email"></div>
+
+                    <div class="input-group">
+                        <input type="password" id="login-password" placeholder="كلمة المرور" required autocomplete="current-password">
+                        <i class="fa-solid fa-lock field-icon"></i>
+                        <button type="button" class="eye-btn" id="toggle-login-password" aria-label="إظهار/إخفاء كلمة المرور">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                        <i class="fa-solid fa-circle-check status-icon"></i>
+                    </div>
+                    <div class="field-hint" id="hint-login-password"></div>
+
+                    <a href="forgot-password.html" class="forgot-password">نسيت كلمة المرور؟</a>
+                    <button type="submit" class="btn-primary full-width" id="sign_in">
+                        <i class="fa-solid fa-right-to-bracket"></i> تسجيل الدخول
+                    </button>
+                </form>
+
+                <p class="social-text">أو سجل الدخول عبر</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- ─── نموذج إنشاء حساب (Wizard) ─── -->
+            <div class="form-wrapper register-form">
+                <h2 class="sec-title">إنشاء حساب جديد</h2>
+                <p class="sec-sub">انضم إلينا وابدأ رحلة العطاء</p>
+
+                <!-- شريط التقدم -->
+                <div class="step-progress">
+                    <div class="step-dots">
+                        <div class="step-dot active" id="dot-1"></div>
+                        <div class="step-dot" id="dot-2"></div>
+                        <div class="step-dot" id="dot-3"></div>
+                    </div>
+                    <div class="step-labels">
+                        <span class="step-label active" id="label-1">معلوماتك</span>
+                        <span class="step-label" id="label-2">البيانات</span>
+                        <span class="step-label" id="label-3">نوع الحساب</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <form id="registerForm" style="width:100%">
+                    <div class="wizard-steps">
+
+                        <!-- ─── الخطوة 1: المعلومات الأساسية ─── -->
+                        <div class="wizard-step active" id="step-1">
+                            <div class="input-group">
+                                <input type="text" id="reg-username" placeholder="اسم المستخدم" required autocomplete="username">
+                                <i class="fa-solid fa-user field-icon"></i>
+                                <i class="fa-solid fa-circle-check status-icon"></i>
+                            </div>
+                            <div class="field-hint" id="hint-reg-username"></div>
+
+                            <div class="input-group">
+                                <input type="email" id="reg-email" placeholder="البريد الإلكتروني" required autocomplete="email">
+                                <i class="fa-solid fa-envelope field-icon"></i>
+                                <i class="fa-solid fa-circle-check status-icon"></i>
+                            </div>
+                            <div class="field-hint" id="hint-reg-email"></div>
+
+                            <div class="input-group">
+                                <input type="password" id="reg-password" placeholder="كلمة المرور" required autocomplete="new-password">
+                                <i class="fa-solid fa-lock field-icon"></i>
+                                <button type="button" class="eye-btn" id="toggle-reg-password" aria-label="إظهار/إخفاء كلمة المرور">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                                <i class="fa-solid fa-circle-check status-icon"></i>
+                            </div>
+                            <div class="password-strength" id="passwordStrength" style="display:none">
+                                <div class="strength-track">
+                                    <div class="strength-fill" id="strengthFill"></div>
+                                </div>
+                                <div class="strength-text" id="strengthText">...</div>
+                            </div>
+                            <div class="field-hint" id="hint-reg-password"></div>
+
+                            <div class="input-group">
+                                <input type="password" id="reg-confirmPassword" placeholder="تأكيد كلمة المرور" required autocomplete="new-password">
+                                <i class="fa-solid fa-lock field-icon"></i>
+                                <button type="button" class="eye-btn" id="toggle-reg-confirmPassword" aria-label="إظهار/إخفاء تأكيد كلمة المرور">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                                <i class="fa-solid fa-circle-check status-icon"></i>
+                            </div>
+                            <div class="field-hint" id="hint-reg-confirmPassword"></div>
+
+                            <button type="button" class="btn-gold full-width" id="nextStep1">
+                                التالي <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                        </div>
+
+                        <!-- ─── الخطوة 2: بيانات التواصل ─── -->
+                        <div class="wizard-step" id="step-2">
+                            <div class="input-group">
+                                <input type="tel" id="reg-phone" placeholder="رقم الهاتف (مثال: 01012345678)" required autocomplete="tel">
+                                <i class="fa-solid fa-phone field-icon"></i>
+                                <i class="fa-solid fa-circle-check status-icon"></i>
+                            </div>
+                            <div class="field-hint" id="hint-reg-phone"></div>
+
+                            <div class="input-group">
+                                <input type="text" id="reg-address" placeholder="العنوان (المدينة والمنطقة)" required autocomplete="street-address">
+                                <i class="fa-solid fa-location-dot field-icon"></i>
+                                <i class="fa-solid fa-circle-check status-icon"></i>
+                            </div>
+                            <div class="field-hint" id="hint-reg-address"></div>
+                            <div class="wizard-nav">
+                                <button type="button" class="btn-outline" id="prevStep2">
+                                    <i class="fa-solid fa-arrow-right"></i> السابق
+                                </button>
+                                <button type="button" class="btn-gold" id="nextStep2">
+                                    التالي <i class="fa-solid fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- ─── الخطوة 3: نوع الحساب ─── -->
+                        <div class="wizard-step" id="step-3">
+                            <div class="input-group select-group">
+                                <select id="reg-role" required>
+                                    <option value="" disabled selected>اختر نوع الحساب</option>
+                                    <option value="user">متبرع</option>
+                                    <option value="charity">جمعية خيرية</option>
+                                    <option value="admin">مسؤول (أدمن)</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                            </div>
+                            <div class="field-hint" id="hint-reg-role"></div>
+
+                            <!-- حقول الجمعية -->
+                            <div id="charity-fields" class="conditional-field">
+                                <div class="input-group">
+                                    <input type="text" id="reg-charityName" placeholder="اسم الجمعية">
+                                    <i class="fa-solid fa-building field-icon"></i>
+                                    <i class="fa-solid fa-circle-check status-icon"></i>
+                                </div>
+                                <div class="field-hint" id="hint-reg-charityName"></div>
+
+                                <div class="input-group">
+                                    <input type="text" id="reg-licenseNumber" placeholder="رقم الترخيص (مثال: AB-12345-2023)">
+                                    <i class="fa-solid fa-id-card field-icon"></i>
+                                    <i class="fa-solid fa-circle-check status-icon"></i>
+                                </div>
+                                <div class="field-hint" id="hint-reg-licenseNumber"></div>
+
+                                <div class="input-group">
+                                    <input type="text" id="reg-charityDescription" placeholder="وصف الجمعية (اختياري)">
+                                    <i class="fa-solid fa-align-left field-icon"></i>
+                                </div>
+                            </div>
+
+                            <!-- حقل الأدمن -->
+                            <div id="admin-fields" class="conditional-field">
+                                <div class="input-group">
+                                    <input type="text" id="reg-nationalID" placeholder="الرقم القومي (14 رقم)" maxlength="14" inputmode="numeric">
+                                    <i class="fa-solid fa-fingerprint field-icon"></i>
+                                    <i class="fa-solid fa-circle-check status-icon"></i>
+                                </div>
+                                <div class="field-hint" id="hint-reg-nationalID"></div>
+                            </div>
+
+                            <div class="wizard-nav">
+                                <button type="button" class="btn-outline" id="prevStep3">
+                                    <i class="fa-solid fa-arrow-right"></i> السابق
+                                </button>
+                                <button type="submit" class="btn-gold" id="sign_up">
+                                    <i class="fa-solid fa-user-plus"></i> سجل الآن
+                                </button>
+                            </div>
+                        </div>
+
+                    </div><!-- /wizard-steps -->
+                </form>
+            </div>
+        </div>
+
+        <!-- ✅ اللوحة الجانبية -->
+        <div class="side-panel">
+            <div class="panel-content panel-login-mode">
+                <h1>مرحباً بعودتك!</h1>
+                <p>ليس لديك حساب بعد؟<br>انضم إلينا اليوم لبدء رحلة العطاء.</p>
+                <button class="ghost-btn" id="register-toggle">  تسجيل الدخول</button>
+            </div>
+            <div class="panel-content panel-register-mode">
+                <h1>أهلاً بك في عطاء!</h1>
+                <p>لديك حساب بالفعل؟<br>سجل دخولك للمتابعة.</p>
+                <button class="ghost-btn" id="login-toggle"> انشاء حساب</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/register.js"></script>
+    <script src="./script/login.js"></script>
+</body>
+</html>

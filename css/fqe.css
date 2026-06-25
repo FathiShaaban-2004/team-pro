@@ -1,0 +1,281 @@
+:root {
+  --primary: #285E66;
+   --bg: #ffffff;
+   --text: #2d3748;
+   
+ }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+}
+
+body{
+  background-color:#ffffff; 
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  padding-top: 76px;
+}
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+.btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .primary {
+    background: var(--primary);
+    color: white;
+    margin-top: 15px;
+  }
+  .primary:hover{
+    background-color: #156FA6;
+  }
+  .outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    margin-top: 15px;
+  }
+
+  .outline.light {
+    border-color: white;
+    color: white;
+  }
+  /*================================sec1=======================*/
+  /*  Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #285E66;
+    padding: 15px 30px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo img {
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+  }
+  
+  .nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .nav a:hover {
+    color: #d4af37;
+  }
+  
+  .buttons button {
+    padding: 8px 15px;
+    border-radius: 6px;
+  }
+  
+  .login {
+    background: #d4af37;
+    color: white;
+    border: none;
+  }
+  
+  .signup {
+    border: 2px solid #d4af37;
+    background: transparent;
+    color: white;
+  }
+  
+  
+  
+  /* header */
+
+.containersss{
+  width: 95%;
+  max-width: 1000px;
+ margin: 33px auto 40px;
+ background-color:#ffffff;
+ padding: 21PX;
+
+}
+
+.questions h1{
+  text-align: center;
+  color:#285E66 ; 
+  margin-bottom: 30px;
+  display: block;
+}
+
+.aske{
+  background-color: rgb(237, 237, 225);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  border-right: 4px solid #285E66;
+}
+
+.asked h2{
+  margin: 0;
+  color: #285E66;
+  font-size: 18px;
+}
+
+.aske p{
+  display: none;
+  margin-top: 10px;
+  color: #333;
+font-size: 17px;
+font-weight: 500;
+padding: 7PX;
+}
+
+.aske.active p{
+  display: block;
+
+}
+
+
+  
+  
+  footer{
+
+ 
+ /* margin-top: 40px;*/
+
+  text-align: center;
+  padding: 20px;
+  background: #285E66;
+  color: #eee;
+margin-top: 100px;
+
+}
+/* ===== Responsive sec1 ===== */
+ @media (max-width: 992px) {
+       .container {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  
+    
+    .actions {
+      order: 2;
+    }
+    /* الاسئلة الشائعة */
+    .containersss{
+      padding:18px ;
+      margin-top: 28px;
+    }
+    .questions h1{
+      font-size: 25px;
+    }
+    .asked h2{
+      font-size: 20px;
+    }
+    .aske{
+      padding: 15px;
+    }
+    .aske p{
+      font-size: 16px;
+    }
+  }
+  /* ===== Responsive sec1 ===== */
+  @media (max-width: 480px) {
+     body{
+      padding-top: 105px;
+    } 
+   
+  } 
+  /* صفحة الا سئلة الشائعة */
+  @media (max-width:600px){
+.containersss{
+  width:95% ;
+  margin:25px auto ;
+  padding: 11px;
+}
+.questions h1{
+  font-size: 25px;
+}
+ .asked h2{
+      font-size: 20px;
+    }
+    .aske{
+      padding: 15px;
+    }
+    .aske p{
+      font-size: 16px;
+    }
+    footer{
+      margin-top: 125px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+      position: absolute;
+      top: 70px;
+      background:#285E66;
+      width: 100%;
+      right: 0;
+    }
+      .buttons {
+        display: flex;
+        gap: 8px;            
+        margin-right: auto;  
+        margin-left: 10px;   
+      }
+    
+      
+    
+      .buttons {
+        padding: 6px 12px;   
+        font-size: 12px;    
+        white-space: nowrap; 
+      }
+    
+  
+  
+  footer{
+    margin-top: 125px;
+  }
+  
+    .nav ul {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .menu {
+      display: block;
+    }
+  
+    
+   
+  }
+  

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات الحساب | عطاء</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/settings.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/all.css">
+<link rel="stylesheet" href="css/style.css">
+    <script src="script/settings.js" defer></script>
+</head>
+
+<body>
+
+<!-- ══════ NAVBAR ══════ -->
+<nav class="navbar" id="navbar" style="height: 80px;">
+    <div class="nav-inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo">
+            <img src="images/logo.png"
+                alt="logo"
+                class="logo-img">
+        </a>
+
+        <!-- Links -->
+        <div class="nav-links">
+            <a href="index.html">الرئيسية</a>
+
+            <a href="charity.html">
+                الجمعيات
+            </a>
+
+            <a href="ai-chat.html">
+                المساعد الذكي
+            </a>
+
+            <a href="about.html">
+                عن المنصة
+            </a>
+
+            <a href="contact.html">
+                تواصل معنا
+            </a>
+        </div>
+
+        <!-- Logged In Actions -->
+<div
+    class="nav-actions"
+    id="navActions">
+</div>
+
+        <!-- Hamburger -->
+        <button class="nav-ham"
+            id="hamBtn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+</nav>
+
+<!-- ══════ MOBILE MENU ══════ -->
+<div class="mobile-nav"
+    id="mobileNav">
+
+    <a href="index.html">الرئيسية</a>
+
+    <a href="charity.html">الجمعيات</a>
+
+    <a href="ai-chat.html">المساعد الذكي</a>
+
+    <a href="about.html">عن المنصة</a>
+
+    <a href="contact.html">تواصل معنا</a>
+
+    <a href="settings.html"
+       class="nav-btn-login">
+
+        ⚙️ الإعدادات
+
+    </a>
+    <a href="donor-dashboard.html"
+   id="mobileDashboardLink"
+   class="nav-btn-login">
+   Dashboard
+</a>
+
+    <button id="mobileLogoutBtn"
+        class="nav-btn-signup"
+        style="width:100%; margin-top:10px;">
+
+        تسجيل خروج
+
+    </button>
+
+</div>
+    <!-- Settings -->
+    <main class="settings-wrapper">
+        <div class="container">
+
+            <div class="settings-layout">
+
+                <!-- Sidebar -->
+                <aside class="settings-sidebar">
+                    <nav class="settings-nav">
+                        <a href="#profile" class="active">👤 الملف الشخصي</a>
+                        <a href="#security">🔒 الأمان وكلمة المرور</a>
+                        <a href="#notifications">🔔 الإشعارات</a>
+                        <a href="#preferences">⚙️ التفضيلات</a>
+                    </nav>
+                </aside>
+
+                <!-- Content -->
+                <div class="settings-content">
+
+                    <!-- PROFILE -->
+                    <section id="profile" class="settings-card active">
+
+                        <div class="card-header">
+                            <h2>الملف الشخصي</h2>
+                            <p>تحديث معلوماتك الأساسية وصورتك الشخصية.</p>
+                        </div>
+
+                        <!-- Avatar -->
+                        <div class="avatar-area">
+
+                            <div class="avatar-box" id="avatarPreview">
+                                👤
+                            </div>
+
+                            <div class="avatar-info">
+
+                                <h4>الصورة الشخصية</h4>
+
+                                <p>JPG, PNG أو GIF. الحجم الأقصى 2MB.</p>
+
+                                <!-- Hidden Input -->
+                                <input
+                                    type="file"
+                                    id="avatarInput"
+                                    accept="image/*"
+                                    style="display: none;"
+                                >
+
+                                <div class="avatar-actions">
+
+                                    <button
+                                        class="btn-sm"
+                                        type="button"
+                                        id="changeAvatarBtn"
+                                    >
+                                        تغيير الصورة
+                                    </button>
+
+                                    <button
+                                        class="btn-sm"
+                                        type="button"
+                                        id="removeAvatarBtn"
+                                        style="border-color: var(--neutral-100); color: var(--neutral-400);"
+                                    >
+                                        إزالة
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Profile Form -->
+                        <form id="profileForm">
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label>اسم المستخدم</label>
+
+                                    <input
+                                        type="text"
+                                        id="userName"
+                                        placeholder="أدخل اسم المستخدم"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>رقم الهاتف</label>
+
+                                    <input
+                                        type="text"
+                                        id="phone"
+                                        placeholder="أدخل رقم الهاتف"
+                                    >
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label>العنوان</label>
+
+                                <input
+                                    type="text"
+                                    id="address"
+                                    placeholder="أدخل العنوان"
+                                >
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    حفظ التغييرات
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </section>
+
+                    <!-- SECURITY -->
+                    <section id="security" class="settings-card">
+
+                        <div class="card-header">
+                            <h2>الأمان وكلمة المرور</h2>
+                            <p>تعزيز حماية حسابك وتغيير بيانات الدخول.</p>
+                        </div>
+
+                        <!-- Password Form -->
+                        <form id="passwordForm">
+
+                            <div class="form-group">
+                                <label>كلمة المرور الحالية</label>
+
+                                <input
+                                    type="password"
+                                    id="oldPassword"
+                                    placeholder="••••••••"
+                                >
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label>كلمة المرور الجديدة</label>
+
+                                    <input
+                                        type="password"
+                                        id="newPassword"
+                                        placeholder="••••••••"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>تأكيد كلمة المرور</label>
+
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        placeholder="••••••••"
+                                    >
+                                </div>
+
+                            </div>
+
+                            <div class="toggle-row">
+
+                                <div class="toggle-label">
+                                    <h4>المصادقة الثنائية (2FA)</h4>
+                                    <p>تفعيل خطوة تحقق إضافية عند تسجيل الدخول.</p>
+                                </div>
+
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    تحديث كلمة المرور
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </section>
+
+                    <!-- NOTIFICATIONS -->
+                    <section id="notifications" class="settings-card">
+
+                        <div class="card-header">
+                            <h2>الإشعارات</h2>
+                            <p>تحكم في طريقة وصول التنبيهات إليك.</p>
+                        </div>
+
+                        <form>
+
+                            <div class="toggle-row">
+
+                                <div class="toggle-label">
+                                    <h4>تنبيهات البريد الإلكتروني</h4>
+                                    <p>استلام تحديثات الحساب والفواتير عبر الإيميل.</p>
+                                </div>
+
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+
+                            </div>
+
+                            <div class="toggle-row">
+
+                                <div class="toggle-label">
+                                    <h4>تنبيهات الرسائل القصيرة</h4>
+                                    <p>إشعارات عاجلة عبر الهاتف المحمول.</p>
+                                </div>
+
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+
+                            </div>
+
+                            <div class="toggle-row">
+
+                                <div class="toggle-label">
+                                    <h4>العروض والتحديثات التسويقية</h4>
+                                    <p>الاشتراك في نشرات الأخبار والعروض الخاصة.</p>
+                                </div>
+
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    حفظ التفضيلات
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </section>
+
+                    <!-- PREFERENCES -->
+                    <!-- PREFERENCES -->
+<section id="preferences" class="settings-card">
+
+    <div class="card-header">
+        <h2>التفضيلات العامة</h2>
+        <p>إعدادات اللغة والمنطقة وتخصيص الواجهة.</p>
+    </div>
+
+    <form id="preferencesForm">
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>اللغة</label>
+
+                <select id="language" disabled>
+                    <option selected>
+                        العربية
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>المنطقة الزمنية</label>
+
+                <select id="timezone" disabled>
+                    <option selected>
+                        (UTC+02:00) القاهرة
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="toggle-row">
+
+            <div class="toggle-label">
+                <h4>الوضع الداكن</h4>
+                <p>
+                    تفعيل المظهر الليلي
+                    لتقليل إجهاد العين.
+                </p>
+            </div>
+
+            <label class="switch">
+                <input
+                    type="checkbox"
+                    id="darkModeToggle"
+                >
+
+                <span class="slider"></span>
+            </label>
+
+        </div>
+
+        <div class="form-actions">
+            <button
+                type="submit"
+                class="btn-primary"
+            >
+                حفظ التفضيلات
+            </button>
+        </div>
+
+    </form>
+
+</section>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-body">
+
+            <div class="footer-brand">
+
+                <div class="nav-logo" style="margin-bottom: 12px;">
+                    <div class="nav-logo-mark" style="background: var(--teal-500);">ع</div>
+                    <span class="nav-logo-text" style="color: var(--white);">عطاء</span>
+                </div>
+
+                <p>
+                    منصة متكاملة لتقديم الخدمات الرقمية بأعلى معايير الجودة والأمان.
+                </p>
+
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-icon">𝕏</a>
+                    <a href="#" class="footer-social-icon">in</a>
+                    <a href="#" class="footer-social-icon">ig</a>
+                </div>
+
+            </div>
+
+            <div class="footer-col">
+                <h4>المنصة</h4>
+                <a href="#">الرئيسية</a>
+                <a href="#">الخدمات</a>
+                <a href="#">الأسعار</a>
+                <a href="#">المدونة</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>الدعم</h4>
+                <a href="#">مركز المساعدة</a>
+                <a href="#">شروط الاستخدام</a>
+                <a href="#">سياسة الخصوصية</a>
+                <a href="#">تواصل معنا</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>تواصل</h4>
+                <a href="#">info@ataa.sa</a>
+                <a href="#">+966 50 000 0000</a>
+                <a href="#">الرياض، المملكة العربية السعودية</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 عطاء. جميع الحقوق محفوظة.</p>
+        </div>
+
+    </footer>
+    
+
+    <script src="script/main.js"></script>
+
+</body>
+</html>

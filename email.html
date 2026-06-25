@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تأكيد البريد الإلكتروني — عطاء</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/Email.css">
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+  <div class="bg-layer">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+
+  <div class="particles" id="particles"></div>
+
+  <div class="card-wrapper">
+
+    <div class="card">
+
+      <div class="logo">
+        <div class="logo-mark">ع</div>
+        <span class="logo-text">عطاء</span>
+      </div>
+
+      <!-- OTP VIEW -->
+
+      <div id="view-otp" class="view active">
+
+        <div class="icon-wrap">
+
+          <div class="icon-circle">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="#267880" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+
+              <polyline points="22,6 12,13 2,6" />
+
+            </svg>
+
+          </div>
+
+          <div class="orbit">
+            <div class="orbit-dot"></div>
+          </div>
+
+        </div>
+
+        <h1 class="card-title">
+          تحقق من بريدك
+        </h1>
+
+        <p class="card-sub">
+
+          أرسلنا رمز التحقق إلى
+
+          <strong id="user-email"></strong>
+
+          <br>
+
+          تحقق من مجلد البريد غير المرغوب فيه
+
+        </p>
+
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div class="tip-badge">
+
+          <svg width="14" height="14" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+
+            <circle cx="12" cy="12" r="10" />
+
+            <line x1="12" y1="16" x2="12" y2="12" />
+
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+
+          </svg>
+
+          الرمز صالح لمدة 10 دقائق
+
+        </div>
+
+        <div class="otp-wrap">
+
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-input">
+
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-input">
+
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-input">
+
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-input">
+
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-input">
+
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-input">
+
+        </div>
+
+        <div class="error-msg" id="error-msg">
+          ❌ الرمز غير صحيح
+        </div>
+
+        <button class="btn-verify"
+          id="verify-btn"
+          onclick="verifyOTP()">
+
+          <span class="btn-text">
+            تأكيد الرمز
+          </span>
+
+          <div class="spinner"></div>
+
+        </button>
+
+        <div class="resend-wrap">
+
+          لم تستلم الرمز؟
+
+          <button class="resend-btn"
+            id="resend-btn"
+            onclick="resendCode()">
+
+            إعادة الإرسال
+
+            <span id="timer">(60)</span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- SUCCESS VIEW -->
+
+      <div id="view-success" class="view">
+
+        <div class="success-icon" id="success-icon">
+
+          <svg class="checkmark"
+            viewBox="0 0 52 52">
+
+            <circle cx="26"
+              cy="26"
+              r="25"
+              fill="none"
+              stroke="#a7dde2"
+              stroke-width="2" />
+
+            <path d="M14 27l7 7 16-16"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+
+          </svg>
+
+          <div class="success-rings"></div>
+
+        </div>
+
+        <h1 class="card-title">
+          تم التحقق بنجاح 🎉
+        </h1>
+
+        <p class="card-sub">
+
+          تم تأكيد بريدك الإلكتروني بنجاح
+
+          <br>
+
+          مرحباً بك في منصة عطاء
+
+        </p>
+
+        <button class="btn-home"
+          onclick="window.location.href='login-register.html'">
+
+          الذهاب لتسجيل الدخول ←
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./script/Email.js"></script>
+
+</body>
+
+</html>

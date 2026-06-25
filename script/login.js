@@ -1,0 +1,384 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const form =
+        document.getElementById('loginForm');
+
+    /* ══════════════════════════════════════════
+       Toast Helper
+    ══════════════════════════════════════════ */
+
+    const toast = (
+        title,
+        icon,
+        text = ''
+    ) => {
+
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon,
+            title,
+            text,
+            showConfirmButton: false,
+            timer: 3500,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'swal-toast-custom'
+            },
+            didOpen: (t) => {
+
+                t.addEventListener(
+                    'mouseenter',
+                    Swal.stopTimer
+                );
+
+                t.addEventListener(
+                    'mouseleave',
+                    Swal.resumeTimer
+                );
+            }
+        });
+    };
+
+    /* ══════════════════════════════════════════
+       Validation Rules
+    ══════════════════════════════════════════ */
+
+    const rules = {
+
+        email: {
+            re: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.(com|net|edu)$/,
+            msg: 'صيغة البريد غير صحيحة'
+        },
+
+        password: {
+            re: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+            msg:
+                'كلمة المرور يجب أن تحتوي على حرف كبير وصغير ورقم و8 أحرف على الأقل'
+        }
+    };
+
+    const validate = (
+        value,
+        rule
+    ) => {
+
+        return rule.re.test(value);
+    };
+
+    /* ══════════════════════════════════════════
+       Input Validation Style
+    ══════════════════════════════════════════ */
+
+    const setFieldState = (
+        id,
+        ok
+    ) => {
+
+        const input =
+            document.getElementById(id);
+
+        if (!input) return;
+
+        input.classList.toggle(
+            'input-valid',
+            ok
+        );
+
+        input.classList.toggle(
+            'input-invalid',
+            !ok
+        );
+    };
+
+    /* ══════════════════════════════════════════
+       Toggle Password
+    ══════════════════════════════════════════ */
+
+    const togglePassword = (
+        inputId,
+        btn
+    ) => {
+
+        const input =
+            document.getElementById(inputId);
+
+        if (!input || !btn) return;
+
+        const isHidden =
+            input.type === 'password';
+
+        input.type =
+            isHidden
+                ? 'text'
+                : 'password';
+
+        const icon =
+            btn.querySelector('i');
+
+        if (icon) {
+
+            icon.className =
+                isHidden
+                    ? 'fa-solid fa-eye-slash'
+                    : 'fa-solid fa-eye';
+        }
+    };
+
+    document
+        .getElementById(
+            'toggle-login-password'
+        )
+        ?.addEventListener(
+            'click',
+            function () {
+
+                togglePassword(
+                    'login-password',
+                    this
+                );
+            }
+        );
+
+    /* ══════════════════════════════════════════
+       Live Validation
+    ══════════════════════════════════════════ */
+
+    document
+        .getElementById('login-email')
+        ?.addEventListener(
+            'blur',
+            (e) => {
+
+                setFieldState(
+                    'login-email',
+
+                    validate(
+                        e.target.value.trim(),
+                        rules.email
+                    )
+                );
+            }
+        );
+
+    document
+        .getElementById(
+            'login-password'
+        )
+        ?.addEventListener(
+            'blur',
+            (e) => {
+
+                setFieldState(
+                    'login-password',
+
+                    validate(
+                        e.target.value,
+                        rules.password
+                    )
+                );
+            }
+        );
+
+    /* ══════════════════════════════════════════
+       Login Submit
+    ══════════════════════════════════════════ */
+
+    if (form) {
+
+        form.addEventListener(
+            'submit',
+            async (e) => {
+
+                e.preventDefault();
+
+                const email =
+                    document
+                        .getElementById(
+                            'login-email'
+                        )
+                        ?.value.trim();
+
+                const password =
+                    document
+                        .getElementById(
+                            'login-password'
+                        )
+                        ?.value;
+
+                if (
+                    !validate(
+                        email,
+                        rules.email
+                    )
+                ) {
+
+                    setFieldState(
+                        'login-email',
+                        false
+                    );
+
+                    return toast(
+                        rules.email.msg,
+                        'error'
+                    );
+                }
+
+                if (
+                    !validate(
+                        password,
+                        rules.password
+                    )
+                ) {
+
+                    setFieldState(
+                        'login-password',
+                        false
+                    );
+
+                    return toast(
+                        rules.password.msg,
+                        'error'
+                    );
+                }
+
+                setFieldState(
+                    'login-email',
+                    true
+                );
+
+                setFieldState(
+                    'login-password',
+                    true
+                );
+
+                const loginBtn =
+                    document.getElementById(
+                        'sign_in'
+                    );
+
+                loginBtn.disabled = true;
+
+                loginBtn.innerHTML = `
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    جاري تسجيل الدخول...
+                `;
+
+                try {
+
+                    const response =
+                        await fetch(
+                            'https://ataa-charity-platform.vercel.app/auth/login',
+                            {
+                                method: 'POST',
+
+                                headers: {
+                                    'Content-Type':
+                                        'application/json'
+                                },
+
+                                body: JSON.stringify({
+                                    email,
+                                    password
+                                })
+                            }
+                        );
+
+                    const data =
+                        await response.json();
+
+                    console.log(data);
+
+                    const token =
+                        data.tokens?.accessToken;
+
+                    if (token) {
+
+                        const payload =
+                            JSON.parse(
+                                atob(
+                                    token.split('.')[1]
+                                )
+                            );
+
+                        console.log(
+                            'TOKEN PAYLOAD:',
+                            payload
+                        );
+
+                        // حفظ التوكن
+                        localStorage.setItem(
+                            'token',
+                            token
+                        );
+
+                        // حفظ بيانات اليوزر
+                        localStorage.setItem(
+                            'user',
+                            JSON.stringify(
+                                payload
+                            )
+                        );
+                    }
+
+                    if (response.ok) {
+
+                        Swal.fire({
+                            icon: 'success',
+                            title:
+                                'تم تسجيل الدخول بنجاح',
+
+                            text:
+                                'مرحباً بعودتك',
+
+                            confirmButtonText:
+                                'متابعة'
+                        }).then(() => {
+
+                            // التحويل للهوم مباشرة
+                            window.location.href =
+                                'index.html';
+                        });
+
+                    } else {
+
+                        Swal.fire({
+                            icon: 'error',
+
+                            title:
+                                'فشل تسجيل الدخول',
+
+                            text:
+                                data.message ||
+                                'البريد الإلكتروني أو كلمة المرور غير صحيحة'
+                        });
+                    }
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    Swal.fire({
+                        icon: 'error',
+
+                        title:
+                            'خطأ في الاتصال',
+
+                        text:
+                            'تعذر الاتصال بالسيرفر'
+                    });
+
+                } finally {
+
+                    loginBtn.disabled = false;
+
+                    loginBtn.innerHTML = `
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        تسجيل الدخول
+                    `;
+                }
+            }
+        );
+    }
+});

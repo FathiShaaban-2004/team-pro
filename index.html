@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عطاء — منصة التبرع بالملابس</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- ══════ loading ══════ -->
+
+<div id="loader">
+    <div>
+      <img src="images/logo.png" alt="logo" >
+    </div>
+</div>
+<!-- ══════ NAVBAR ══════ -->
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png"
+        alt="logo"
+        class="logo-img">
+    </a>
+
+    <!-- Links -->
+    <div class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="charity.html">الجمعيات</a>
+      <a href="ai-chat.html" class="active">
+        المساعد الذكي
+      </a>
+      <a href="about.html">
+        عن المنصة
+      </a>
+      <a href="contact.html">
+        تواصل معنا
+      </a>
+    
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions" id="navActions">
+
+      <!-- لو مش عامل Login -->
+      <div id="guestButtons">
+
+        <a class="nav-btn-login"
+          href="login-register.html?mode=login">
+          دخول
+        </a>
+
+        <a class="nav-btn-signup"
+          href="login-register.html?mode=register">
+          حساب جديد
+        </a>
+
+      </div>
+
+      <!-- لو عامل Login -->
+      <div id="userButtons"
+        style="display:none; align-items:center; gap:10px;">
+
+        <a href="settings.html"
+          class="settings-btn"
+          title="الإعدادات">
+
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <button id="logoutBtn"
+          class="nav-btn-login">
+          تسجيل خروج
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Hamburger -->
+    <button class="nav-ham"
+      id="hamBtn">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav"
+  id="mobileNav">
+
+  <a href="index.html">
+    الرئيسية
+  </a>
+
+  <a href="charity.html">
+    الجمعيات
+  </a>
+
+  <a href="ai-chat.html">
+    المساعد الذكي
+  </a>
+
+  <a href="about.html">
+    عن المنصة
+  </a>
+
+  <a href="contact.html">
+    تواصل معنا
+  </a>
+
+  <!-- Guest -->
+  <div id="mobileGuestButtons">
+
+    <a class="nav-btn-login"
+      href="login-register.html?mode=login">
+      دخول
+    </a>
+
+    <a class="nav-btn-signup"
+      href="login-register.html?mode=register">
+      حساب جديد
+    </a>
+
+  </div>
+
+  <!-- Logged In -->
+  <div id="mobileUserButtons"
+    style="display:none;">
+
+    <a href="settings.html"
+      class="nav-btn-login">
+      ⚙️ الإعدادات
+    </a>
+
+    <button id="mobileLogoutBtn"
+      class="nav-btn-signup"
+      style="width:100%; margin-top:10px;">
+
+      تسجيل خروج
+    </button>
+
+  </div>
+
+</div>
+<!-- ══════ HERO ══════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-circle hero-circle-1"></div>
+  <div class="hero-circle hero-circle-2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content" style="animation: fadeUp .7s ease both">
+      <div class="hero-badge">منصة التبرع الأولى في مصر</div>
+      <h1 class="hero-title">
+        اجعل ملابسك<br>
+        <span>أملًا جديدًا</span><br>
+        في حياة الآخرين
+      </h1>
+      <p class="hero-desc">
+        منصة عطاء تربط المتبرعين بالجمعيات الخيرية بسهولة وأمان،
+        لنمنح الملابس المستعملة فرصة جديدة تصنع فرقًا حقيقيًا في المجتمع.
+      </p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="donation.html" onclick="document.getElementById('signupModal').classList.add('open')">
+          <i class="fas fa-heart"></i>
+          ابدأ التبرع الآن
+        </a>
+        <a href="about.html" class="btn-outline">تعرف علينا أكثر</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-val">10,000+</span>
+          <span class="hero-stat-lbl">قطعة وُزّعت</span>
+        </div>
+        <div>
+          <span class="hero-stat-val">50+</span>
+          <span class="hero-stat-lbl">جمعية شريكة</span>
+        </div>
+        <div>
+          <span class="hero-stat-val">1,200+</span>
+          <span class="hero-stat-lbl">متطوع نشط</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <img src="images/hero.jpeg" alt="التبرع بالملابس">
+        <div class="hero-img-badge">
+          <div class="hero-img-badge-icon">🎁</div>
+          <div>
+            <strong>تبرعت للتو!</strong>
+            <p>السيد تبرع بـ 12 قطعة ملابس</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ HOW IT WORKS ══════ -->
+<section class="how">
+  <div class="how-header reveal">
+    <span class="sec-label">🔄 كيف تساهم معنا؟</span>
+    <h2 class="sec-title">ثلاث خطوات <span>بسيطة</span></h2>
+    <p class="sec-sub">نوفر منصة سهلة وآمنة تربط بين المتبرعين والجمعيات الخيرية لتحقيق أقصى استفادة من الملابس المستعملة وخدمة المجتمع.</p>
+  </div>
+
+  <div class="how-steps container">
+    <div class="step-card reveal">
+      <div class="step-num">١</div>
+      <div class="step-icon teal">🎁</div>
+      <h3>متبرع</h3>
+      <p>لديك ملابس بحالة جيدة؟ تبرع بها الآن وساهم في إدخال الفرحة على من يحتاجها.</p>
+      <a class="step-link" href="login-register.html?mode=register" >سجّل كمتبرع <i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <div class="step-card reveal" style="transition-delay:.15s">
+      <div class="step-num">٢</div>
+      <div class="step-icon gold">🏢</div>
+      <h3>جمعية خيرية</h3>
+      <p>سجّل جمعيتك معنا لإدارة التبرعات واستلام الملابس وتوزيعها على المحتاجين.</p>
+      <a class="step-link" href="login-register.html?mode=register" >سجّل جمعيتك <i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <div class="step-card reveal" style="transition-delay:.3s">
+      <div class="step-num">٣</div>
+      <div class="step-icon teal">🛡️</div>
+      <h3>أدمن</h3>
+      <p>إدارة المنصة ومتابعة المستخدمين والتبرعات وعرض التقارير والإحصائيات.</p>
+      <a class="step-link" href="login-register.html?mode=login" >تسجيل أدمن <i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ STATS ══════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-num"><span class="stat-plus">+</span>10,000</span>
+      <p class="stat-label">قطعة ملابس وُزّعت على المحتاجين</p>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.15s">
+      <span class="stat-num"><span class="stat-plus">+</span>50</span>
+      <p class="stat-label">جمعية خيرية شريكة</p>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.3s">
+      <span class="stat-num"><span class="stat-plus">+</span>1,200</span>
+      <p class="stat-label">متطوع نشط على المنصة</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ CHARITIES ══════ -->
+<section class="charities">
+  <div class="container">
+    <div class="charities-header reveal">
+      <div>
+        <span class="sec-label">🤝 شركاؤنا</span>
+        <h2 class="sec-title">الجمعيات <span>المعتمدة</span></h2>
+        <p class="sec-sub">نعمل مع أبرز الجمعيات الخيرية لضمان وصول تبرعاتك لمستحقيها.</p>
+      </div>
+      <a href="charity.html" class="btn-primary">عرض كل الجمعيات</a>
+    </div>
+
+    <div class="charity-cards">
+      <div class="charity-card reveal">
+        <div class="charity-card-img">
+          <img src="images/images11.jpg" alt="بنك الكساء">
+          <span class="charity-card-badge">القاهرة</span>
+        </div>
+        <div class="charity-card-body">
+          <div class="charity-card-logo">
+            <img src="images/logo2.png" alt="">
+          </div>
+          <h3>بنك الكساء المصري</h3>
+          <p>نسعى لتحقيق الاستدامة في العمل الخيري من خلال برامجنا المتنوعة وتوزيع الملابس.</p>
+          <div class="charity-card-footer">
+            <span class="charity-loc"><i class="fas fa-location-dot"></i> القاهرة</span>
+            <a href="ksaa.html" class="btn-sm">عرض التفاصيل</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="charity-card reveal" style="transition-delay:.15s">
+        <div class="charity-card-img">
+          <img src="images/hero-img-resala.jpg" alt="رسالة">
+          <span class="charity-card-badge">الإسكندرية</span>
+        </div>
+        <div class="charity-card-body">
+          <div class="charity-card-logo">
+            <img src="images/Resala-logo.png" alt="">
+          </div>
+          <h3>جمعية رسالة الخيرية</h3>
+          <p>متخصصون في جمع وتوزيع التبرعات العينية للأسر الأكثر احتياجًا بطريقة إنسانية.</p>
+          <div class="charity-card-footer">
+            <span class="charity-loc"><i class="fas fa-location-dot"></i> الإسكندرية</span>
+            <a href="rsala.html" class="btn-sm">عرض التفاصيل</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="charity-card reveal" style="transition-delay:.3s">
+        <div class="charity-card-img">
+          <img src="images/hero-img-aleslah.png" alt="الإصلاح">
+          <span class="charity-card-badge">الجيزة</span>
+        </div>
+        <div class="charity-card-body">
+          <div class="charity-card-logo">
+            <img src="images/logo-header-eslah.png" alt="">
+          </div>
+          <h3>مؤسسة الإصلاح الخيرية</h3>
+          <p>نعمل على دعم الأسر المتعففة وتوفير احتياجاتهم الأساسية من ملابس واحتياجات أخرى.</p>
+          <div class="charity-card-footer">
+            <span class="charity-loc"><i class="fas fa-location-dot"></i> الجيزة</span>
+            <a href="aleslah.html" class="btn-sm">عرض التفاصيل</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CTA ══════ -->
+<div class="cta-banner reveal">
+  <div class="cta-text">
+    <h2>جاهز تبدأ رحلة العطاء؟</h2>
+    <p>انضم لآلاف المتبرعين الذين يصنعون فرقًا حقيقيًا في حياة المحتاجين كل يوم.</p>
+  </div>
+  <div class="cta-btns">
+    <button class="btn-gold" onclick="document.getElementById('signupModal').classList.add('open')">
+      <i class="fas fa-heart"></i> تبرع الآن
+    </button>
+    <a href="charity.html" class="btn-outline">تعرف على الجمعيات</a>
+  </div>
+</div>
+
+<!-- ══════ FOOTER ══════ -->
+<footer class="footer">
+  <div class="footer-body">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="nav-logo-mark">ع</div>
+        <span class="nav-logo-text" style="color:var(--white)">عطاء</span>
+      </div>
+      <p>منصة عطاء تهدف إلى تنظيم التبرع بالملابس المستعملة وربط المتبرعين بالجمعيات الخيرية بكل سهولة وأمان.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>الصفحات</h4>
+      <a href="index.html">الرئيسية</a>
+      <a href="charity.html">الجمعيات</a>
+      <a href="about.html">عن المنصة</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>الجمعيات</h4>
+      <a href="ksaa.html">بنك الكساء المصري</a>
+      <a href="rsala.html">جمعية رسالة</a>
+      <a href="aleslah.html">مؤسسة الإصلاح</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="fqe.html">سياسة الخصوصية</a>
+      <a href="privacy.html">الشروط والأحكام</a>
+      <a href="terms.html">الأسئلة الشائعة</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 عطاء – جميع الحقوق محفوظة</p>
+    <p>صُنع بـ ❤️ لخدمة المجتمع المصري</p>
+  </div>
+</footer>
+<script src="script/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا — عطاء</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- ══════ loading ══════ -->
+
+<div id="loader">
+    <div>
+      <img src="images/logo.png" alt="logo">
+    </div>
+</div>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png"
+        alt="logo"
+        class="logo-img">
+    </a>
+
+    <!-- Links -->
+    <div class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="charity.html">الجمعيات</a>
+      <a href="ai-chat.html" class="active">
+        المساعد الذكي
+      </a>
+      <a href="about.html">
+        عن المنصة
+      </a>
+      <a href="contact.html">
+        تواصل معنا
+      </a>
+    
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions" id="navActions">
+
+      <!-- لو مش عامل Login -->
+      <div id="guestButtons">
+
+        <a class="nav-btn-login"
+          href="login-register.html?mode=login">
+          دخول
+        </a>
+
+        <a class="nav-btn-signup"
+          href="login-register.html?mode=register">
+          حساب جديد
+        </a>
+
+      </div>
+
+      <!-- لو عامل Login -->
+      <div id="userButtons"
+        style="display:none; align-items:center; gap:10px;">
+
+        <a href="settings.html"
+          class="settings-btn"
+          title="الإعدادات">
+
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <button id="logoutBtn"
+          class="nav-btn-login">
+          تسجيل خروج
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Hamburger -->
+    <button class="nav-ham"
+      id="hamBtn">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav"
+  id="mobileNav">
+
+  <a href="index.html">
+    الرئيسية
+  </a>
+
+  <a href="charity.html">
+    الجمعيات
+  </a>
+
+  <a href="ai-chat.html">
+    المساعد الذكي
+  </a>
+
+  <a href="about.html">
+    عن المنصة
+  </a>
+
+  <a href="contact.html">
+    تواصل معنا
+  </a>
+
+  <!-- Guest -->
+  <div id="mobileGuestButtons">
+
+    <a class="nav-btn-login"
+      href="login-register.html?mode=login">
+      دخول
+    </a>
+
+    <a class="nav-btn-signup"
+      href="login-register.html?mode=register">
+      حساب جديد
+    </a>
+
+  </div>
+
+  <!-- Logged In -->
+  <div id="mobileUserButtons"
+    style="display:none;">
+
+    <a href="settings.html"
+      class="nav-btn-login">
+      ⚙️ الإعدادات
+    </a>
+
+    <button id="mobileLogoutBtn"
+      class="nav-btn-signup"
+      style="width:100%; margin-top:10px;">
+
+      تسجيل خروج
+    </button>
+
+  </div>
+
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="breadcrumb">
+    <a href="index.html">الرئيسية</a>
+    <span>/</span>
+    <span style="color:rgba(255,255,255,.8)">تواصل معنا</span>
+  </div>
+  <h1>تواصل <span style="color:var(--gold-300)">معنا</span></h1>
+  <p>يسعدنا الرد على استفساراتكم واقتراحاتكم لتطوير المنصة وجعلها أكثر فائدة للجميع.</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec">
+  <div class="contact-wrap">
+
+    <!-- Info -->
+    <div class="contact-info-side reveal">
+      <span class="sec-label">📬 معلومات التواصل</span>
+      <h2>نحن هنا لمساعدتك</h2>
+      <p>لا تتردد في التواصل معنا في أي وقت. فريقنا جاهز للرد على جميع استفساراتك خلال 24 ساعة.</p>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h4>البريد الإلكتروني</h4>
+          <p>contact@ataa.com</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <h4>رقم الهاتف</h4>
+          <p>01000000000</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+        <div>
+          <h4>الموقع</h4>
+          <p>المنصورة — جمهورية مصر العربية</p>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="contact-form-card reveal" style="transition-delay:.15s">
+      <h2>راسلنا الآن</h2>
+      <p>سنرد عليك في أقرب وقت ممكن</p>
+
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>الاسم</label>
+            <input type="text" placeholder="اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label>البريد الإلكتروني</label>
+            <input type="email" placeholder="example@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>الموضوع</label>
+          <input type="text" placeholder="موضوع رسالتك" required>
+        </div>
+
+        <div class="form-group">
+          <label>الرسالة</label>
+          <textarea placeholder="اكتب رسالتك هنا..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <i class="fas fa-paper-plane"></i>
+          إرسال الرسالة
+        </button>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        ✅ تم إرسال رسالتك بنجاح! سنرد عليك خلال 24 ساعة.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-body">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="nav-logo-mark">ع</div>
+        <span class="nav-logo-text" style="color:var(--white)">عطاء</span>
+      </div>
+      <p>منصة عطاء تهدف إلى تنظيم التبرع بالملابس المستعملة وربط المتبرعين بالجمعيات الخيرية.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>الصفحات</h4>
+      <a href="index.html">الرئيسية</a>
+      <a href="charity.html">الجمعيات</a>
+      <a href="about.html">عن المنصة</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+    <div class="footer-col">
+      <h4>الجمعيات</h4>
+      <a href="ksaa.html">بنك الكساء المصري</a>
+      <a href="rsala.html">جمعية رسالة</a>
+      <a href="aleslah.html">مؤسسة الإصلاح</a>
+    </div>
+    <div class="footer-col">
+      <h4>قانوني</h4>
+      <a href="fqe.html">سياسة الخصوصية</a>
+      <a href="privacy.html">الشروط والأحكام</a>
+      <a href="terms.html">الأسئلة الشائعة</a>
+    </div>
+  </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 عطاء – جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+</body>
+<script src="script/main.js">
+
+</script>
+</html>

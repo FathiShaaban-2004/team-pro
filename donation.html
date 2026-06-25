@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>إضافة منتج جديد | عطاء</title>
+
+    <link rel="stylesheet"
+          href="css/style.css" />
+
+    <link rel="stylesheet"
+          href="css/main.css" />
+
+    <link rel="stylesheet"
+          href="css/donation.css" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png"
+        alt="logo"
+        class="logo-img">
+    </a>
+
+    <!-- Links -->
+    <div class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="charity.html">الجمعيات</a>
+      <a href="ai-chat.html" class="active">
+        المساعد الذكي
+      </a>
+      <a href="about.html">
+        عن المنصة
+      </a>
+      <a href="contact.html">
+        تواصل معنا
+      </a>
+    
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions" id="navActions">
+
+      <!-- لو مش عامل Login -->
+      <div id="guestButtons">
+
+        <a class="nav-btn-login"
+          href="login-register.html?mode=login">
+          دخول
+        </a>
+
+        <a class="nav-btn-signup"
+          href="login-register.html?mode=register">
+          حساب جديد
+        </a>
+
+      </div>
+
+      <!-- لو عامل Login -->
+      <div id="userButtons"
+        style="display:none; align-items:center; gap:10px;">
+
+        <a href="settings.html"
+          class="settings-btn"
+          title="الإعدادات">
+
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <button id="logoutBtn"
+          class="nav-btn-login">
+          تسجيل خروج
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Hamburger -->
+    <button class="nav-ham"
+      id="hamBtn">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav"
+  id="mobileNav">
+
+  <a href="index.html">
+    الرئيسية
+  </a>
+
+  <a href="charity.html">
+    الجمعيات
+  </a>
+
+  <a href="ai-chat.html">
+    المساعد الذكي
+  </a>
+
+  <a href="about.html">
+    عن المنصة
+  </a>
+
+  <a href="contact.html">
+    تواصل معنا
+  </a>
+
+  <!-- Guest -->
+  <div id="mobileGuestButtons">
+
+    <a class="nav-btn-login"
+      href="login-register.html?mode=login">
+      دخول
+    </a>
+
+    <a class="nav-btn-signup"
+      href="login-register.html?mode=register">
+      حساب جديد
+    </a>
+
+  </div>
+
+  <!-- Logged In -->
+  <div id="mobileUserButtons"
+    style="display:none;">
+
+    <a href="settings.html"
+      class="nav-btn-login">
+      ⚙️ الإعدادات
+    </a>
+
+    <button id="mobileLogoutBtn"
+      class="nav-btn-signup"
+      style="width:100%; margin-top:10px;">
+
+      تسجيل خروج
+    </button>
+
+  </div>
+
+</div>
+
+    <!-- Main -->
+    <main class="page-wrapper">
+
+        <div class="donation-container">
+
+            <header class="page-header">
+                <h1>
+                    إضافة منتج للتبرع
+                </h1>
+
+                <p>
+                    ساهم في إسعاد الآخرين من خلال
+                    التبرع بأغراضك المستعملة
+                    بحالة جيدة
+                </p>
+            </header>
+
+            <form id="donationForm"
+                  class="donation-card"
+                  enctype="multipart/form-data">
+
+                <div class="form-grid">
+
+                    <!-- النوع -->
+                    <div class="form-group">
+
+                        <label for="category">
+                            نوع المنتج
+                        </label>
+
+                        <select id="category"
+                                name="type"
+                                class="styled-select"
+                                required>
+
+                            <option value=""
+                                    disabled
+                                    selected>
+                                اختر النوع...
+                            </option>
+
+                            <option value="man">
+                                رجال
+                            </option>
+
+                            <option value="woman">
+                                حريمي
+                            </option>
+
+                            <option value="child">
+                                أطفال
+                            </option>
+
+                        </select>
+                    </div>
+
+                    <!-- المقاس -->
+                    <div class="form-group">
+
+                        <label for="size">
+                            المقاس
+                        </label>
+
+                        <select id="size"
+                                name="size"
+                                class="styled-select"
+                                required>
+
+                            <option value=""
+                                    disabled
+                                    selected>
+                                اختر المقاس...
+                            </option>
+
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+
+                            <option value="Free">
+                                مقاس حر
+                            </option>
+
+                        </select>
+                    </div>
+
+                    <!-- العدد -->
+                    <div class="form-group">
+
+                        <label>
+                            العدد
+                        </label>
+
+                        <div class="quantity-wrapper">
+
+                            <button type="button"
+                                    class="qty-btn"
+                                    onclick="updateQty(1)">
+                                +
+                            </button>
+
+                            <input type="number"
+                                   id="quantity"
+                                   name="quantity"
+                                   class="quantity-input"
+                                   value="1"
+                                   min="1"
+                                   readonly />
+
+                            <button type="button"
+                                    class="qty-btn"
+                                    onclick="updateQty(-1)">
+                                -
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- الحالة -->
+                    <div class="form-group full-width">
+
+                        <label>
+                            حالة المنتج
+                        </label>
+
+                        <div class="radio-grid">
+
+                            <label class="radio-card">
+
+                                <input type="radio"
+                                       name="condition"
+                                       value="جديدة"
+                                       checked />
+
+                                <div class="radio-card-content">
+                                    <i class="fa-solid fa-star"
+                                       style="margin-left:8px"></i>
+                                    جديدة
+                                </div>
+
+                            </label>
+
+                            <label class="radio-card">
+
+                                <input type="radio"
+                                       name="condition"
+                                       value="ممتازة" />
+
+                                <div class="radio-card-content">
+                                    ممتازة
+                                </div>
+
+                            </label>
+
+                            <label class="radio-card">
+
+                                <input type="radio"
+                                       name="condition"
+                                       value="جيدة" />
+
+                                <div class="radio-card-content">
+                                    جيدة
+                                </div>
+
+                            </label>
+
+                            <label class="radio-card">
+
+                                <input type="radio"
+                                       name="condition"
+                                       value="مقبولة" />
+
+                                <div class="radio-card-content">
+                                    مقبولة
+                                </div>
+
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <!-- الصور -->
+                    <div class="form-group full-width">
+
+                        <label>
+                            صور المنتج
+                        </label>
+
+                        <div class="upload-area"
+                             id="dropZone">
+
+                            <input type="file"
+                                   id="fileInput"
+                                   class="file-input-real"
+                                   multiple
+                                   accept="image/*" />
+
+                            <div class="upload-content">
+
+                                <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+                                <div class="upload-text">
+                                    انقر لرفع صورة
+                                    أو اسحبها هنا
+                                </div>
+
+                                <div class="upload-hint">
+                                    PNG, JPG حتى 5MB
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="preview-gallery"
+                             id="previewGallery">
+                        </div>
+                    </div>
+
+                    <!-- وصف -->
+                    <div class="form-group full-width">
+
+                        <label for="notes">
+                            ملاحظات إضافية
+                        </label>
+
+                        <textarea id="notes"
+                                  name="description"
+                                  class="styled-input"
+                                  rows="3"
+                                  placeholder="اكتب تفاصيل إضافية..."></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button type="button"
+                            class="btn-cancel"
+                            onclick="window.history.back()">
+                        إلغاء
+                    </button>
+
+                    <button type="submit"
+                            class="btn-submit">
+                        تقديم التبرع
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="script/main.js"></script>
+    <script src="script/donation.js"></script>
+
+</body>
+</html>
