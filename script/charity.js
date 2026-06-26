@@ -28,9 +28,9 @@ async function getStats() {
         const data = await response.json();
 
      // حولت الاصفار الي الارقام التالية 
-        document.getElementById("total-donations").textContent = data.totalDonations || data.donations || 10;
-        document.getElementById("beneficiary-requests").textContent = data.totalRequests || data.requests || 25;
-        document.getElementById("active-volunteers").textContent = data.activeVolunteers || data.volunteers || 40;
+        // document.getElementById("total-donations").textContent = data.totalDonations || data.donations || 10;
+        // document.getElementById("beneficiary-requests").textContent = data.totalRequests || data.requests || 25;
+        // document.getElementById("active-volunteers").textContent = data.activeVolunteers || data.volunteers || 40;
     } catch (error) {
         console.log("Stats Error:", error);
     }
